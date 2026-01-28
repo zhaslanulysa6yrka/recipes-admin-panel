@@ -22,9 +22,9 @@ onMounted(fetchRecipes)
 
 <template>
   <AppLayout>
-    <template #title>Рецепты</template>
+    <template #title>Recipes</template>
     <template #controls>
-      <AppButton text="Добавить рецепт" />
+      <AppButton text="Add Recipe" />
     </template>
     <template #inner>
       <el-table :data="recipes" style="width: 100%">
