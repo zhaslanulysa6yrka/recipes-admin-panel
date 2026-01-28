@@ -8,7 +8,7 @@ import { RecipesService } from '@/services'
 
 const route = useRoute()
 const recipeId = route.params.id
-const recipe = ref(null)
+const recipe = ref(RecipesService.getEmptyRecipe())
 
 const fetchRecipe = async () => {
   try {
