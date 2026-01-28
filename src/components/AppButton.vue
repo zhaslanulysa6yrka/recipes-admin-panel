@@ -11,8 +11,14 @@ defineProps<{
 <style lang="scss" scoped>
 .button {
   font-size: 17px;
-  background-color: $violet;
-  border-radius: 4px;
   padding: 20px 24px;
+  border-radius: 4px;
+  border: none;
+  background-color: $violet;
+  transition-duration: 0.2s;
+
+  &:hover {
+    background-color: $pink;
+  }
 }
 </style>
