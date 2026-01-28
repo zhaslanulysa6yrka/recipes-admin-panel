@@ -33,6 +33,7 @@ import AppMenu from '@/components/AppMenu.vue'
     .header {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 20px;
 
       .title {
         color: $violet;
