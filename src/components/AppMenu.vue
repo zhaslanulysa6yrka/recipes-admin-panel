@@ -2,8 +2,8 @@
   <div class="menu">
     <div class="logo">
       <svg
-        height="64px"
-        width="64px"
+        height="36px"
+        width="36px"
         version="1.1"
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"
@@ -63,5 +63,13 @@
         </g>
       </svg>
     </div>
+    <el-menu class="el-menu-vertical-demo">
+      <el-menu-item index="1">
+        <el-icon :size="24"><Food /></el-icon>
+      </el-menu-item>
+      <el-menu-item index="2">
+        <el-icon :size="24"><Dish /></el-icon>
+      </el-menu-item>
+    </el-menu>
   </div>
 </template>
