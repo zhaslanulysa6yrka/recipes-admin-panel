@@ -5,9 +5,9 @@ import AppButton from '@/components/AppButton.vue'
 
 <template>
   <AppLayout>
-    <template #title>Категории</template>
+    <template #title>Categories</template>
     <template #controls>
-      <AppButton text="Добавить категорию" />
+      <AppButton text="Add Category" />
     </template>
     <template #inner></template>
   </AppLayout>
