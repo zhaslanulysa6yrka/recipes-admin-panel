@@ -1,9 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppMenu from '@/components/AppMenu.vue'
+</script>
 
 <template>
-  <div>App Layout</div>
+  <div id="root">
+    <AppMenu />
+  </div>
 </template>
-
-<style lang="scss" scoped>
-@import '@/assets/styles/index';
-</style>
