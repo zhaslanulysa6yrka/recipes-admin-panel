@@ -28,11 +28,16 @@ onMounted(fetchRecipes)
     </template>
     <template #inner>
       <el-table :data="recipes" style="width: 100%">
-        <el-table-column prop="idMeal" label="ID" />
+        <el-table-column prop="idMeal" label="Id" />
+        <el-table-column label="Image">
+          <template #default="{ row }">
+            <img :src="row.strMealThumb" alt="Meal Image" class="image" />
+          </template>
+        </el-table-column>
         <el-table-column prop="strMeal" label="Name" />
         <el-table-column prop="strArea" label="Area" />
         <el-table-column prop="strCategory" label="Category" />
-        <el-table-column prop="strTags" label="Tags">
+        <el-table-column label="Tags">
           <template #default="{ row }">
             <el-tag v-for="tag in row.strTags?.split(',')" :key="tag" type="primary" class="tag">
               {{ tag }}
@@ -44,7 +49,14 @@ onMounted(fetchRecipes)
   </AppLayout>
 </template>
 
-<style>
+<style scoped>
+.image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
 .tag:not(:last-child) {
   margin-right: 4px;
   margin-bottom: 4px;
