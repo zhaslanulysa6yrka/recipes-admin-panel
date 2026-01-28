@@ -15,13 +15,13 @@ const isPathActive = (path: string): boolean => route.path === path
     <el-menu :router="true" class="nav el-menu-vertical-demo">
       <el-menu-item
         :index="ROUTER_PATHS.HOME"
-        :class="['item', isPathActive(ROUTER_PATHS.HOME) && 'active']"
+        :class="['item', isPathActive(ROUTER_PATHS.HOME) && 'is-active']"
       >
         <el-icon :size="24"><Food /></el-icon>
       </el-menu-item>
       <el-menu-item
         :index="ROUTER_PATHS.CATEGORIES"
-        :class="['item', isPathActive(ROUTER_PATHS.CATEGORIES) && 'active']"
+        :class="['item', isPathActive(ROUTER_PATHS.CATEGORIES) && 'is-active']"
       >
         <el-icon :size="24"><Dish /></el-icon>
       </el-menu-item>
@@ -51,7 +51,7 @@ const isPathActive = (path: string): boolean => route.path === path
     .item {
       color: $violet;
 
-      &.active {
+      &.is-active {
         color: $pink;
       }
     }
