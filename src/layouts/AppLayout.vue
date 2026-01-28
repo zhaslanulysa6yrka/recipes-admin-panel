@@ -3,6 +3,33 @@ import AppMenu from '@/components/AppMenu.vue'
 </script>
 
 <template>
-  <AppMenu />
-  <main></main>
+  <div class="root">
+    <AppMenu />
+    <main class="main">
+      <header class="header">
+        <div class="title">
+          <slot name="title"></slot>
+        </div>
+        <div class="controls">
+          <slot name="controls"></slot>
+        </div>
+      </header>
+    </main>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.root {
+  display: flex;
+
+  .main {
+    flex: 1;
+    padding-inline: 16px;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+</style>
