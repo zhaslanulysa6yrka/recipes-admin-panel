@@ -5,6 +5,7 @@ import AppLayout from '@/layouts/AppLayout.vue'
 import AppButton from '@/components/AppButton.vue'
 
 import { RecipesService } from '@/services'
+import { ROUTER_PATHS } from '@/constants'
 
 const recipes = ref([])
 
@@ -15,6 +16,10 @@ const fetchRecipes = async () => {
   } catch (error) {
     console.error('Error fetching recipes:', error)
   }
+}
+
+const getRecipePath = (id: string) => {
+  return `${ROUTER_PATHS.RECIPE.replace(':id', id)}`
 }
 
 onMounted(fetchRecipes)
@@ -31,7 +36,9 @@ onMounted(fetchRecipes)
         <el-table-column prop="idMeal" label="Id" />
         <el-table-column label="Image">
           <template #default="{ row }">
-            <img :src="row.strMealThumb" alt="Meal Image" class="image" />
+            <router-link :to="getRecipePath(row.idMeal)">
+              <img :src="row.strMealThumb" alt="Meal Image" class="image" />
+            </router-link>
           </template>
         </el-table-column>
         <el-table-column prop="strMeal" label="Name" />
