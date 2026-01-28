@@ -48,6 +48,11 @@ const isPathActive = (path: string): boolean => route.path === path
 
     .item {
       color: $violet;
+      transition-duration: 0.2s;
+
+      &:hover {
+        color: $pink;
+      }
 
       &.is-active {
         color: $pink;
