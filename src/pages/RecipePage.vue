@@ -31,6 +31,8 @@ onMounted(() => {
     <template #controls>
       <AppButton text="Add Recipe" />
     </template>
-    <template #inner></template>
+    <template #inner>
+      {{ recipe }}
+    </template>
   </AppLayout>
 </template>
