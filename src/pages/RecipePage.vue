@@ -4,16 +4,16 @@ import AppButton from '@/components/AppButton.vue'
 
 import { useRoute } from 'vue-router'
 import { onMounted, ref } from 'vue'
-import { RecipesService } from '@/services'
+import { RecipeService } from '@/services'
 
 const route = useRoute()
 const recipeId = route.params.id
-const recipe = ref(RecipesService.getEmptyRecipe())
+const recipe = ref(RecipeService.getEmptyRecipe())
 const isCreatingMode = ref(true)
 
 const fetchRecipe = async () => {
   try {
-    recipe.value = await RecipesService.getRecipeById(recipeId as string)
+    recipe.value = await RecipeService.getRecipeById(recipeId as string)
     isCreatingMode.value = false
   } catch (error) {
     console.error('Error fetching recipe:', error)

@@ -4,14 +4,14 @@ import { onMounted, ref } from 'vue'
 import AppLayout from '@/layouts/AppLayout.vue'
 import AppButton from '@/components/AppButton.vue'
 
-import { RecipesService } from '@/services'
+import { RecipeService } from '@/services'
 import { ROUTER_PATHS } from '@/constants'
 
 const recipes = ref([])
 
 const fetchRecipes = async () => {
   try {
-    recipes.value = await RecipesService.getRecipesByLetter()
+    recipes.value = await RecipeService.getRecipesByLetter()
   } catch (error) {
     console.error('Error fetching recipes:', error)
   }
