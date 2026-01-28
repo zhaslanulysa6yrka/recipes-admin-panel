@@ -1,1 +1,1 @@
-export { getRecipesByLetter } from './provider'
+export { getRecipesByLetter, getRecipeById } from './provider'

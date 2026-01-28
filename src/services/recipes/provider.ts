@@ -8,5 +8,5 @@ export const getRecipesByLetter = async () => {
 
 export const getRecipeById = async (id: string) => {
   const response = await axios.get(`${LOOKUP_MEAL_BY_ID_ENDPOINT}${id}`)
-  return response.data.meals
+  return response.data.meals[0]
 }
