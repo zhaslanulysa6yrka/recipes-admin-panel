@@ -47,5 +47,6 @@ onMounted(fetchRecipes)
 <style>
 .tag:not(:last-child) {
   margin-right: 4px;
+  margin-bottom: 4px;
 }
 </style>
