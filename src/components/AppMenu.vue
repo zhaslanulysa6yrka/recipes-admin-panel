@@ -30,8 +30,6 @@ const isPathActive = (path: string): boolean => route.path === path
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/index.scss';
-
 .menu {
   width: 70px;
   height: 100vh;

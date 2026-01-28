@@ -22,8 +22,6 @@ import AppMenu from '@/components/AppMenu.vue'
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/index.scss';
-
 .root {
   display: flex;
 
