@@ -11,8 +11,7 @@ const recipes = ref([])
 
 const fetchRecipes = async () => {
   try {
-    const response = await RecipesService.getRecipesByLetter()
-    recipes.value = response.data.meals
+    recipes.value = await RecipesService.getRecipesByLetter()
   } catch (error) {
     console.error('Error fetching recipes:', error)
   }
