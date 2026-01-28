@@ -9,10 +9,12 @@ import { RecipesService } from '@/services'
 const route = useRoute()
 const recipeId = route.params.id
 const recipe = ref(RecipesService.getEmptyRecipe())
+const isCreatingMode = ref(true)
 
 const fetchRecipe = async () => {
   try {
     recipe.value = await RecipesService.getRecipeById(recipeId as string)
+    isCreatingMode.value = false
   } catch (error) {
     console.error('Error fetching recipe:', error)
   }
@@ -27,7 +29,7 @@ onMounted(() => {
 
 <template>
   <AppLayout>
-    <template #title>Recipe</template>
+    <template #title>{{ isCreatingMode ? 'New Recipe' : recipe.strMeal }}</template>
     <template #controls>
       <AppButton text="Add Recipe" />
     </template>
