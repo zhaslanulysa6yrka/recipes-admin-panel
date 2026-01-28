@@ -11,7 +11,7 @@ const recipes = ref([])
 const fetchRecipes = async () => {
   try {
     const response = await RecipesService.getRecipesByLetter()
-    recipes.value = response.data
+    recipes.value = response.data.meals
   } catch (error) {
     console.error('Error fetching recipes:', error)
   }
@@ -27,7 +27,25 @@ onMounted(fetchRecipes)
       <AppButton text="Добавить рецепт" />
     </template>
     <template #inner>
-      {{ recipes }}
+      <el-table :data="recipes" style="width: 100%">
+        <el-table-column prop="idMeal" label="ID" />
+        <el-table-column prop="strMeal" label="Name" />
+        <el-table-column prop="strArea" label="Area" />
+        <el-table-column prop="strCategory" label="Category" />
+        <el-table-column prop="strTags" label="Tags">
+          <template #default="{ row }">
+            <el-tag v-for="tag in row.strTags?.split(',')" :key="tag" type="primary" class="tag">
+              {{ tag }}
+            </el-tag>
+          </template>
+        </el-table-column>
+      </el-table>
     </template>
   </AppLayout>
 </template>
+
+<style>
+.tag:not(:last-child) {
+  margin-right: 4px;
+}
+</style>
