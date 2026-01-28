@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { ROUTER_PATHS } from '@/constants'
-import CategoriesPage from '@/pages/CategoriesPage.vue'
-import HomePage from '@/pages/HomePage.vue'
+import { HomePage, CategoriesPage, RecipePage } from '@/pages'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +14,11 @@ const router = createRouter({
       path: ROUTER_PATHS.CATEGORIES,
       name: 'categories',
       component: CategoriesPage,
+    },
+    {
+      path: ROUTER_PATHS.RECIPE,
+      name: 'recipe',
+      component: RecipePage,
     },
   ],
 })
