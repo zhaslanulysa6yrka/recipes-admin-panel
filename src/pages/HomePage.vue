@@ -26,5 +26,8 @@ onMounted(fetchRecipes)
     <template #controls>
       <AppButton text="Добавить рецепт" />
     </template>
+    <template #inner>
+      {{ recipes }}
+    </template>
   </AppLayout>
 </template>
